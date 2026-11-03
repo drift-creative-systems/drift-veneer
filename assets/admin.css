@@ -1,0 +1,127 @@
+/*
+ * Drift: Veneer admin styles.
+ *
+ * Loaded on Settings → Drift: Veneer only. Markup: includes/class-drift-veneer-admin.php
+ * and the Admin menus card in includes/class-drift-veneer-access.php.
+ * Accent: rose #f43f5e for the mark; #be123c for borders and text (AA on white).
+ */
+
+.drift-veneer {
+	--drift-veneer-accent: #f43f5e;
+	--drift-veneer-accent-strong: #be123c;
+	--drift-veneer-border: #dcdcde;
+	--drift-veneer-muted: #50575e;
+	--drift-veneer-subtle: #f6f7f7;
+	max-width: 1100px;
+}
+
+/* Core's .button sets display, which would override the hidden attribute. */
+.drift-veneer [hidden] {
+	display: none !important;
+}
+
+.drift-veneer__title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.drift-veneer__mark {
+	display: inline-flex;
+	color: var(--drift-veneer-accent);
+}
+
+.drift-veneer__lead {
+	margin: 8px 0 0;
+	max-width: 720px;
+	font-size: 14px;
+	color: var(--drift-veneer-muted);
+}
+
+.drift-veneer__card {
+	margin-top: 16px;
+	padding: 4px 20px 16px;
+	background: #fff;
+	border: 1px solid var(--drift-veneer-border);
+	border-radius: 8px;
+}
+
+.drift-veneer__card-title {
+	margin: 16px 0 0;
+}
+
+.drift-veneer__intro {
+	margin: 12px 0 16px;
+	padding-left: 12px;
+	border-left: 3px solid var(--drift-veneer-accent);
+	max-width: 720px;
+}
+
+.drift-veneer__card .form-table th {
+	font-weight: 500;
+}
+
+/* Media picker ------------------------------------------------------------ */
+
+.drift-veneer-media__preview img {
+	display: block;
+	max-width: 240px;
+	max-height: 120px;
+	margin: 0 0 8px;
+	padding: 8px;
+	background: var(--drift-veneer-subtle);
+	border: 1px solid var(--drift-veneer-border);
+	border-radius: 6px;
+}
+
+/* Admin menus card -------------------------------------------------------- */
+
+.drift-veneer__menus {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 8px;
+	margin-top: 16px;
+}
+
+.drift-veneer__menu {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 10px 12px;
+	border: 1px solid var(--drift-veneer-border);
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.drift-veneer__menu:has(input:checked) {
+	border-color: var(--drift-veneer-accent-strong);
+	background: var(--drift-veneer-subtle);
+}
+
+.drift-veneer__menu input {
+	margin-top: 2px;
+}
+
+.drift-veneer__menu small {
+	display: block;
+	color: var(--drift-veneer-muted);
+	font-family: ui-monospace, monospace;
+	font-size: 11px;
+	word-break: break-all;
+}
+
+@media (max-width: 1100px) {
+	.drift-veneer__menus {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 782px) {
+	.drift-veneer__card {
+		padding: 4px 16px 16px;
+	}
+
+	.drift-veneer__menus {
+		grid-template-columns: 1fr;
+	}
+}
